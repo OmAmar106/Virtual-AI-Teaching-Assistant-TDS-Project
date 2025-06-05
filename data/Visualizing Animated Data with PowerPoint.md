@@ -1,5 +1,11 @@
-Visualizing Animated Data with PowerPoint [#/visualizing-animated-data-with-powerpoint?id=visualizing-animated-data-with-powerpoint] [https://youtu.be/umHlPDFVWr0] How to make a bar chart race in PowerPoint [https://blog.gramener.com/bar-chart-race-in-powerpoint/]
+## Visualizing Animated Data with PowerPoint
 
-PreviousVisualizing Forecasts with Excel [#/visualizing-forecasts-with-excel]
+[![Visualizing animated data with
+PowerPoint](https://i.ytimg.com/vi_webp/umHlPDFVWr0/sddefault.webp)](https://youtu.be/umHlPDFVWr0)
 
-NextVisualizing Animated Data with Flourish [#/visualizing-animated-data-with-flourish]
+  * [How to make a bar chart race in PowerPoint](https://blog.gramener.com/bar-chart-race-in-powerpoint/)
+
+Previous Visualizing Forecasts with Excel
+
+Next Visualizing Animated Data with Flourish
+

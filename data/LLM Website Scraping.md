@@ -1,5 +1,6 @@
-LLM Website Scraping [#/llm-website-scraping?id=llm-website-scraping]
+## LLM Website Scraping
 
-PreviousConvert HTML to Markdown [#/convert-html-to-markdown]
+Previous Convert HTML to Markdown
 
-NextLLM Video Screen-Scraping [#/llm-video-screen-scraping]
+Next LLM Video Screen-Scraping
+

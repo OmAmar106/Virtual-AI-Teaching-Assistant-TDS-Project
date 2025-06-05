@@ -1,36 +1,66 @@
-Documentation: Markdown [#/markdown?id=documentation-markdown] Markdown is a lightweight markup language for creating formatted text using a plain-text editor. It’s the standard for documentation in software projects and data science notebooks. Watch this introduction to Markdown (19 min): [https://youtu.be/HUBNt18RFbo] Common Markdown syntax: # Heading 1
-## Heading 2
+## Documentation: Markdown
 
-**bold** and *italic*
+Markdown is a lightweight markup language for creating formatted text using a
+plain-text editor. It’s the standard for documentation in software projects
+and data science notebooks.
 
-- Bullet point
-- Another point
-- Nested point
+Watch this introduction to Markdown (19 min):
 
-1. Numbered list
-2. Second item
+[![Markdown Crash Course \(19
+min\)](https://i.ytimg.com/vi_webp/HUBNt18RFbo/sddefault.webp)](https://youtu.be/HUBNt18RFbo)
 
-[Link text](https://url.com)
-![Image alt](image.jpg)
+Common Markdown syntax:
 
-```python
-# Code block
-def hello():
-print("Hello")
-```
+    
+    
+    # Heading 1
+    ## Heading 2
+    
+    **bold** and *italic*
+    
+    - Bullet point
+    - Another point
+      - Nested point
+    
+    1. Numbered list
+    2. Second item
+    
+    [Link text](https://url.com)
+    ![Image alt](image.jpg)
+    
+    ```python
+    # Code block
+    def hello():
+        print("Hello")
+    ```
+    
+    > BlockquoteCopy to clipboardErrorCopied
 
-> Blockquote Copy to clipboard Error Copied There is also a GitHub Flavored Markdown [https://github.github.com/gfm/] standard which is popular. This includes extensions like: - [ ] Incomplete task
-- [x] Completed task
+There is also a [GitHub Flavored Markdown](https://github.github.com/gfm/)
+standard which is popular. This includes extensions like:
 
-~~Strikethrough~~
+    
+    
+    - [ ] Incomplete task
+    - [x] Completed task
+    
+    ~~Strikethrough~~
+    
+    Tables:
+    
+    | Column 1 | Column 2 |
+    |----------|----------|
+    | Cell 1   | Cell 2   |
+    Copy to clipboardErrorCopied
 
-Tables:
+Tools for working with Markdown:
 
-| Column 1 | Column 2 |
-|----------|----------|
-| Cell 1 | Cell 2 |
-Copy to clipboard Error Copied Tools for working with Markdown: markdown2 [https://pypi.org/project/markdown2/] : Python library to convert Markdown to HTML markdownlint [https://github.com/DavidAnson/markdownlint] : Linting Markdown All in One [https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one] : VS Code extension pandoc [https://pandoc.org/] : Convert between formats
+  * [markdown2](https://pypi.org/project/markdown2/): Python library to convert Markdown to HTML
+  * [markdownlint](https://github.com/DavidAnson/markdownlint): Linting
+  * [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one): VS Code extension
+  * [pandoc](https://pandoc.org/): Convert between formats
 
-Previous2. Deployment Tools [#/deployment-tools]
+Previous 2\. Deployment Tools
 
-NextImages: Compression [#/image-compression]
+Next Images: Compression
+

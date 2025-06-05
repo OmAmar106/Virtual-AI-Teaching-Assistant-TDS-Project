@@ -1,5 +1,9 @@
-Data Storytelling [#/data-storytelling?id=data-storytelling] [https://youtu.be/aF93i6zVVQg]
+# Data Storytelling
 
-PreviousRAWgraphs [#/rawgraphs]
+[![Narrate a
+story](https://i.ytimg.com/vi_webp/aF93i6zVVQg/sddefault.webp)](https://youtu.be/aF93i6zVVQg)
 
-NextNarratives with LLMs [#/narratives-with-llms]
+Previous RAWgraphs
+
+Next Narratives with LLMs
+

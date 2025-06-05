@@ -5,6 +5,7 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from time import sleep
 import shutil
+import html2text
 
 def clean_text(raw_text: str) -> str:
     cleaned = re.sub(r'window\.\$docsify\s*=\s*\{.*?\};', '', raw_text, flags=re.DOTALL)
@@ -54,13 +55,15 @@ if not os.path.exists("data"):
     while True:
         html_body = page.eval_on_selector("body", "el => { const clone = el.cloneNode(true); clone.querySelector('.sidebar')?.remove(); return clone.innerHTML; }")
 
-        formatted_text = clean_text_with_links(html_body)
+        # formatted_text = clean_text_with_links(html_body)
+
+        markdown = html2text.html2text(html_body)
 
         title = page.title().replace("/", "_").replace("\\", "_") 
         if os.path.exists(f'data/{title}'):
             break
         file = open(f"data/{title}.md", "w", encoding="utf-8")
-        file.write(formatted_text)
+        file.write(markdown)
         file.close()
         print(f"{title} Written")
 

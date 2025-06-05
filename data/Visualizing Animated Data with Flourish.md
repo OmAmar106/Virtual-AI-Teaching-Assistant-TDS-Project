@@ -1,5 +1,9 @@
-Visualizing Animated Data with Flourish [#/visualizing-animated-data-with-flourish?id=visualizing-animated-data-with-flourish] [https://youtu.be/JrnIu5Bm8i4]
+## Visualizing Animated Data with Flourish
 
-PreviousVisualizing Animated Data with PowerPoint [#/visualizing-animated-data-with-powerpoint]
+[![Visualizing animated data with
+Flourish](https://i.ytimg.com/vi_webp/JrnIu5Bm8i4/sddefault.webp)](https://youtu.be/JrnIu5Bm8i4)
 
-NextVisualizing Network Data with Kumu [#/visualizing-network-data-with-kumu]
+Previous Visualizing Animated Data with PowerPoint
+
+Next Visualizing Network Data with Kumu
+

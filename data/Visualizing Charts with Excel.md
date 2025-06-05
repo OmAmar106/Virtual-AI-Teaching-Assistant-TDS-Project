@@ -1,5 +1,9 @@
-Visualizing Charts with Excel [#/visualizing-charts-with-excel?id=visualizing-charts-with-excel] [https://youtu.be/sORnCj52COw?t=1813s]
+## Visualizing Charts with Excel
 
-PreviousVisualizing Network Data with Kumu [#/visualizing-network-data-with-kumu]
+[![Visualizing charts with Google Data StudioTools to visualize
+numbers](https://i.ytimg.com/vi_webp/sORnCj52COw/sddefault.webp)](https://youtu.be/sORnCj52COw?t=1813s)
 
-NextData Visualization with Seaborn [#/data-visualization-with-seaborn]
+Previous Visualizing Network Data with Kumu
+
+Next Data Visualization with Seaborn
+

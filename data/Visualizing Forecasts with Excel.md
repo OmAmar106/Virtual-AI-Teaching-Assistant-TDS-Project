@@ -1,5 +1,11 @@
-Visualizing Forecasts with Excel [#/visualizing-forecasts-with-excel?id=visualizing-forecasts-with-excel] [https://youtu.be/judFpVgfsV4] Excel File [https://docs.google.com/spreadsheets/d/1a6cSbmZKjX_ZzBsWWrPQwU_4KgRNMwc0/view#gid=1138079165]
+## Visualizing Forecasts with Excel
 
-Previous7. Data Visualization [#/data-visualization]
+[![Visualizing forecasts with
+Excel](https://i.ytimg.com/vi_webp/judFpVgfsV4/sddefault.webp)](https://youtu.be/judFpVgfsV4)
 
-NextVisualizing Animated Data with PowerPoint [#/visualizing-animated-data-with-powerpoint]
+  * [Excel File](https://docs.google.com/spreadsheets/d/1a6cSbmZKjX_ZzBsWWrPQwU_4KgRNMwc0/view#gid=1138079165)
+
+Previous 7\. Data Visualization
+
+Next Visualizing Animated Data with PowerPoint
+

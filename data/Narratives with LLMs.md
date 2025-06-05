@@ -1,5 +1,8 @@
-Narratives with LLMs [#/narratives-with-llms?id=narratives-with-llms] #TODO
+## Narratives with LLMs
 
-PreviousData Storytelling [#/data-storytelling]
+#TODO
 
-NextInteractive Notebooks: Marimo [#/marimo]
+Previous Data Storytelling
+
+Next Interactive Notebooks: Marimo
+
