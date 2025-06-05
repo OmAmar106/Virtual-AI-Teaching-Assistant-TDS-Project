@@ -53,6 +53,7 @@ if not os.path.exists("data"):
     os.makedirs("data", exist_ok=True)
     while True:
         html_body = page.eval_on_selector("body", "el => { const clone = el.cloneNode(true); clone.querySelector('.sidebar')?.remove(); return clone.innerHTML; }")
+
         formatted_text = clean_text_with_links(html_body)
 
         title = page.title().replace("/", "_").replace("\\", "_") 
