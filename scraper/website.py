@@ -35,8 +35,8 @@ def clean_text_with_links(html: str) -> str:
     return clean_text(text)
 
 if '-del' in sys.argv:
-    # print("It will delete the file data/data.md")
-    # assert(False)
+    print("It will delete the file data/data.md")
+    assert(False)
     try:
         shutil.rmtree("data")
         print("File Deleted")

@@ -3,7 +3,6 @@ import os
 for filename in os.listdir("data"):
     if filename.endswith(".md"):
         if filename in ['REST APIs.md','Web Framework: FastAPI.md','Hybrid RAG with TypeSense.md']:
-            print(filename)
             continue
         path = os.path.join("data", filename)
         with open(path, "r", encoding="utf-8") as f:
