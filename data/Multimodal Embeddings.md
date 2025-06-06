@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/multimodal-embeddings
+
 ## Multimodal Embeddings
 
 Multimodal embeddings map **text** and **images** into the **same** vector

@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/hybrid-rag-typesense
+
 ## Hybrid Retrieval Augmented Generation (Hybrid RAG) with TypeSense
 
 Hybrid RAG combines semantic (vector) search with traditional keyword search

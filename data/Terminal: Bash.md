@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/bash
+
 ## Terminal: Bash
 
 UNIX shells are the de facto standard in the data science world and

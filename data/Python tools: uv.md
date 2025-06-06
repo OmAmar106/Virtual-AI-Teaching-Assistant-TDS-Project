@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/uv
+
 ## Python tools: uv
 
 [Install uv](https://docs.astral.sh/uv/getting-started/installation/).

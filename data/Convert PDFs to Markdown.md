@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/convert-pdfs-to-markdown
+
 ## Converting PDFs to Markdown
 
 PDF documents are ubiquitous in academic, business, and technical contexts,

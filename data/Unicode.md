@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/unicode
+
 ## Unicode
 
 Ever noticed when you copy-paste some text and get garbage symbols? Or see

@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/image-compression
+
 ## Images: Compression
 
 Image compression is essential when deploying apps. Often, pages have dozens

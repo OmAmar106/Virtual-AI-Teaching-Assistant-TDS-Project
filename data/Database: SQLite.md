@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/sqlite
+
 ## Database: SQLite
 
 Relational databases are used to store data in a structured way. You’ll often

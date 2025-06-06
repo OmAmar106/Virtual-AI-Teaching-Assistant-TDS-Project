@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/google-auth
+
 ## Google Authentication with FastAPI
 
 Secure your API endpoints using Google ID tokens to restrict access to

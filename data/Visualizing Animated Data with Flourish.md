@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/visualizing-animated-data-with-flourish
+
 ## Visualizing Animated Data with Flourish
 
 [![Visualizing animated data with

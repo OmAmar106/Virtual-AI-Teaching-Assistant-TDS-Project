@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/llm-image-generation
+
 ## Gemini Flash Experimental Image Generation and Editing APIs
 
 In March 2025, Google introduced native image generation and editing capabilities in the Gemini 2.0 Flash Experimental model. You can now generate and iteratively edit images via a single REST endpoint ([Experiment with Gemini 2.0 Flash native image generation](https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/), [Generate images | Gemini API | Google AI for Developers](https://ai.google.dev/gemini-api/docs/image-generation)).

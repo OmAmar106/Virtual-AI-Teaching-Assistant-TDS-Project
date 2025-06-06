@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/scraping-pdfs-with-tabula
+
 ## Scraping PDFs with Tabula
 
 [![Scrape PDFs with Tabula Python

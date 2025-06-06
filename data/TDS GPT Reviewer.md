@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/tds-gpt-reviewer
+
 # TDS GPT Reviewer
 
 After the later parts of this course’s contents were written, we ran it

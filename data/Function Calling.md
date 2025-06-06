@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/function-calling
+
 ## Function Calling with OpenAI
 
 [Function Calling](https://platform.openai.com/docs/guides/function-calling)

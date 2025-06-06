@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/rest-apis
+
 ## REST APIs
 
 REST (Representational State Transfer) APIs are the standard way to build web

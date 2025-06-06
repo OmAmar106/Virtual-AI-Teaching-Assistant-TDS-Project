@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/wikipedia-data-with-python
+
 ## Wikipedia Data with Python
 
 [![Wikipedia data with Wikimedia Python

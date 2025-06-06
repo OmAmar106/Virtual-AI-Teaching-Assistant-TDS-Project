@@ -12,8 +12,8 @@ import random
 import json
 
 if '-del' in sys.argv:
-    # print("It will delete the file data/data.md")
-    # assert(False)
+    print("It will delete the file")
+    assert(False)
     try:
         shutil.rmtree("data_discourse")
         print("File Deleted")

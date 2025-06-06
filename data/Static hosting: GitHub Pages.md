@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/github-pages
+
 ## Static hosting: GitHub Pages
 
 [GitHub Pages](https://pages.github.com/) is a free hosting service that turns

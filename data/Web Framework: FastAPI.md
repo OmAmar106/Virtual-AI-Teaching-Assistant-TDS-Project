@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/fastapi
+
 ## Web Framework: FastAPI
 
 [FastAPI](https://fastapi.tiangolo.com/) is a modern Python web framework for

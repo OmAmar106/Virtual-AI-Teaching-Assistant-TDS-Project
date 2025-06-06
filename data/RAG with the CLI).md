@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/rag-cli
+
 ## Retrieval Augmented Generation (RAG) with the CLI
 
 Retrieval Augmented Generation (RAG) combines retrieval (searching a knowledge

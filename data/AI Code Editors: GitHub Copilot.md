@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/github-copilot
+
 ## AI Editor: GitHub Copilot
 
 AI Code Editors like [GitHub Copilot](https://github.com/features/copilot),

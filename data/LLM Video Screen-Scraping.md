@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/llm-video-screen-scraping
+
 ## LLM Video Screen-Scraping
 
 Video screen-scraping with LLMs is a powerful technique for extracting

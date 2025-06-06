@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/outlier-detection-with-excel
+
 ## Outlier Detection with Excel
 
 [![Outlier detection with

@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/web-automation-with-playwright
+
 ## Web Scraping with Playwright in Python
 
 Scrape JavaScript‑heavy sites effortlessly with Playwright.

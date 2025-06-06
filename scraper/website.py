@@ -63,7 +63,8 @@ if not os.path.exists("data"):
         if os.path.exists(f'data/{title}'):
             break
         file = open(f"data/{title}.md", "w", encoding="utf-8")
-        file.write(markdown)
+        url = page.url
+        file.write(f"Current Page URL: {url}\n\n{markdown}")
         file.close()
         print(f"{title} Written")
 

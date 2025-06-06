@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/profiling-data-with-python
+
 ## Profile Data with Python
 
 [![Discover the data profile with

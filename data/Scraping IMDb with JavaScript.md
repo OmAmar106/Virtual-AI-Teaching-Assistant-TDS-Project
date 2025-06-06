@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/scraping-imdb-with-javascript
+
 ## Scraping IMDb with JavaScript
 
 [![Scraping the IMDb with Browser

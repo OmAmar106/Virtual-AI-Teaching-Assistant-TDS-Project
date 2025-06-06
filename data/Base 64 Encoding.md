@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/base64-encoding
+
 # Base 64 Encoding
 
 Base64 is a method to convert binary data into ASCII text. It’s essential when

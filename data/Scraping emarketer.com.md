@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/scraping-emarketer
+
 ## Scraping emarketer
 
 In this live scraping session, we explore a real-life scenario where Straive

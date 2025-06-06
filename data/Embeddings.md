@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/embeddings
+
 ## Embeddings: OpenAI and Local Models
 
 Embedding models convert text into a list of numbers. These are like a map of

@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/cors
+
 ## CORS: Cross-Origin Resource Sharing
 
 CORS (Cross-Origin Resource Sharing) is a security mechanism that controls how

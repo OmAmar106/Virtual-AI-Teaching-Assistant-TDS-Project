@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/forecasting-with-excel
+
 ## Forecasting with Excel
 
 [![Forecasting with

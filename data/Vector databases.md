@@ -1,3 +1,5 @@
+Current Page URL: https://tds.s-anand.net/#/vector-databases
+
 ## Vector Databases
 
 Vector databases are specialized databases that store and search vector
