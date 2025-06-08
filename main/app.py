@@ -41,7 +41,12 @@ def index():
     except:
         image_url = None
     d = jsonify(main.generate.output(question, image_url))
-    print(image_url)
+    
+    try:
+        if filepath and os.path.exists(filepath):
+            os.remove(filepath)
+    except Exception as e:
+        print(f"Error deleting image file: {e}")
     return d
 
 if __name__ == '__main__':
