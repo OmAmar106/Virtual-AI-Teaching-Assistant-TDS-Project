@@ -1,6 +1,6 @@
 from flask import Flask, request, url_for, jsonify
 from flask_cors import CORS
-import generate
+import main.generate
 import base64
 import os
 import random
@@ -26,7 +26,7 @@ def index():
         with open(filepath, 'wb') as f:
             f.write(image_data)
         image_url = url_for('static', filename=f'uploads/{filename}', _external=True)
-    d = jsonify(generate.output(question, image_url))
+    d = jsonify(main.generate.output(question, image_url))
     if filepath and os.path.exists(filepath):
         os.remove(filepath)
     return d
