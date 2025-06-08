@@ -1,13 +1,20 @@
 from flask import Flask, request, url_for, jsonify
 from flask_cors import CORS
-import main.generate
-import base64
 import os
+if 'VERCEL' in os.environ:
+    import main.generate
+else:
+    import generate
+import base64
 import random
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 app = Flask(__name__, static_folder=os.path.join(BASE_DIR, 'static'))
-UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static/uploads')
+if 'VERCEL' in os.environ:
+    UPLOAD_FOLDER = '/tmp/uploads'
+else:
+    UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static/uploads')
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 CORS(app)
 
 @app.route('/api', methods=['POST'])
@@ -21,7 +28,6 @@ def index():
         header, encoded = image_base64.split(',', 1) if ',' in image_base64 else (None, image_base64)
         image_data = base64.b64decode(encoded)
         filename = f'{random.randint(1,10**18)}.webp'
-        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
         filepath = os.path.join(UPLOAD_FOLDER, filename)
         with open(filepath, 'wb') as f:
             f.write(image_data)
