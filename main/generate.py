@@ -1,9 +1,9 @@
 import json
 import os
 from typing import List, Dict, Any
-from tqdm import tqdm
 import requests
 from pinecone import Pinecone, ServerlessSpec
+import base64
 
 AI_PIPE_API_KEY = os.getenv("API_KEY")
 PINECONE_API_KEY = os.getenv("PINE_KEY")
@@ -38,37 +38,38 @@ def ai_pipe_embedding(text: str) -> List[float]:
     response.raise_for_status()
     return response.json()["data"][0]["embedding"]
 
+
+def encode_image_base64(path: str) -> str:
+    with open(path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode("utf-8")
+    
 def semantic_search(query: str, top_k: int = 5) -> List[Dict[str, Any]]:
     query_embedding = ai_pipe_embedding(query)
     search_response = index.query(
         vector=query_embedding,
         top_k=top_k,
-        include_metadata=True
+        include_metadata=True,
     )
     results = []
     for match in search_response.matches:
         try:
             results.append({
-                "score": match.score,
-                "topic_id": match.metadata["topic_id"],
-                "topic_title": match.metadata["topic_title"],
-                "root_post_number": match.metadata["root_post_number"],
-                "post_numbers": match.metadata["post_numbers"],
                 "combined_text": match.metadata["combined_text"],
+                "link":f"https://discourse.onlinedegree.iitm.ac.in/t/{'-'.join(match.metadata["topic_title"].split(' '))}/{int(match.metadata["topic_id"])}",
+                "score":match.score
             })
         except:
             try:
                 results.append({
-                    "score": match.score,
-                    "topic_id": match.metadata["link"],
-                    "topic_title": match.metadata["topic_title"],
+                    "link": match.metadata["link"],
                     "combined_text": match.metadata["combined_text"],
+                    "score":match.score
                 })
             except:
                 continue
     return results
 
-def ai_pipe_chat_completion(messages: List[Dict[str, str]]) -> str:
+def ai_pipe_chat_completion(messages: List[Dict[str, Any]]) -> str:
     url = "https://aiproxy.sanand.workers.dev/openai/v1/chat/completions"
     payload = {
         "model": "gpt-4o-mini",
@@ -78,23 +79,59 @@ def ai_pipe_chat_completion(messages: List[Dict[str, str]]) -> str:
     response.raise_for_status()
     return response.json()["choices"][0]["message"]["content"]
 
-def generate_answer(query: str, context_texts: List[str]) -> str:
+def generate_answer(query: str, context_texts: List[str], image_url: str = None, image_base64: str = None) -> str:
     context = "\n\n---\n\n".join(context_texts)
     messages = [
-        {"role": "system", "content": "You are a helpful assistant that answers questions based on forum discussions."},
-        {"role": "user", "content": f"Based on these forum excerpts:\n\n{context}\n\nQuestion: {query}\n\nAnswer:"}
+        {"role": "system", 
+         "content": "You are a helpful assistant that answers questions based on forum discussions."
+                    "If the answer is not available or clear in the provided excerpts, "
+                    "respond only with: 'Sorry, the answer is not available in the discourse.'"},
     ]
+    if image_base64 or image_url:
+        image_payload = {
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/webp;base64,{image_base64}" if image_base64 else image_url
+            }
+        }
+        messages.append({
+            "role": "user",
+            "content": [
+                {"type": "text", "text": f"Based on these forum excerpts:\n\n{context}\n\nQuestion: {query}"},
+                image_payload
+            ]
+        })
+    else:
+        messages.append({
+            "role": "user",
+            "content": f"Based on these forum excerpts:\n\n{context}\n\nQuestion: {query}"
+        })
     return ai_pipe_chat_completion(messages)
 
-# query = "I know Docker but have not used Podman before. Should I use Docker for this course?"
-# results = semantic_search(query, top_k=3)
 
-# print("\nTop search results:")
-# for i, res in enumerate(results, 1):
-#     print(f"\n[{i}] Score: {res['score']:.4f}")
-#     print(f"Topic: {res['topic_title']}")
-#     print(f"Content snippet: {res['combined_text'][:500]}...\n")
+def output(query,imageurl=None,k=3):
+    results = semantic_search(query, top_k=k)
+    # if not results or (results[0].get("score", 0) < 0.4):
+    #     return {"answer": "Sorry, the answer is not available in the discourse.", "links": []}
+    # print(results[0]["score"])
+    # print("\nTop search results:")
+    # for i, res in enumerate(results, 1):
+    #     print(f"Link: {res['link']}")
+    #     print(f"Content snippet: {res['combined_text'][:500]}...\n")
+    context_texts = [res["combined_text"] for res in results]
+    answer = generate_answer(query, context_texts,image_url=imageurl)
+    return {'answer':answer,'links':[{"url":res['link'],'text':res['combined_text'][:100]} for res in results]}
 
-# context_texts = [res["combined_text"] for res in results]
-# answer = generate_answer(query, context_texts)
-# print("\nGenerated Answer:\n", answer)
+if __name__=='__main__':
+    query = "When is the TDS Sep 2025 end-term exam?"
+    # results = semantic_search(query, top_k=3)
+
+    # print("\nTop search results:")
+    # for i, res in enumerate(results, 1):
+    #     print(f"Link: {res['link']} {res['score']}")
+    #     print(f"Content snippet: {res['combined_text'][:500]}...\n")
+
+    # context_texts = [res["combined_text"] for res in results]
+    # answer = generate_answer(query, context_texts)
+    # print("\nGenerated Answer:\n", answer)
+    print(output(query))
