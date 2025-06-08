@@ -83,9 +83,7 @@ def generate_answer(query: str, context_texts: List[str], image_url: str = None,
     context = "\n\n---\n\n".join(context_texts)
     messages = [
         {"role": "system", 
-         "content": "You are a helpful assistant that answers questions based on forum discussions."
-                    "If the answer is not available or clear in the provided excerpts, "
-                    "respond only with: 'Sorry, the answer is not available in the discourse.'"},
+         "content": "You are a helpful assistant that answers questions based on forum discussions."},
     ]
     if image_base64 or image_url:
         image_payload = {
@@ -123,7 +121,7 @@ def output(query,imageurl=None,k=3):
     return {'answer':answer,'links':[{"url":res['link'],'text':res['combined_text'][:100]} for res in results]}
 
 if __name__=='__main__':
-    query = "When is the TDS Sep 2025 end-term exam?"
+    query = "I know Docker but have not used Podman. Should I use Docker for this not available in the course? "
     # results = semantic_search(query, top_k=3)
 
     # print("\nTop search results:")

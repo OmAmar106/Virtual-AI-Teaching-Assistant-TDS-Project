@@ -11,7 +11,7 @@ def index():
     names = request.get_json()
     question = names.get('question') if names else None
     image_base64 = names.get('image') if names else None
-    return generate.output(question)
+    return jsonify(generate.output(question))
 
 if __name__ == '__main__':
     app.run(debug=True)
