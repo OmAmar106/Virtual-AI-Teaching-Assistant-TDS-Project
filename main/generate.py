@@ -86,18 +86,10 @@ def generate_answer(query: str, context_texts: List[str], image_url: str = None,
          "content": "You are a helpful assistant that answers questions based on forum discussions."},
     ]
     if image_base64 or image_url:
-        image_payload = {
-            "type": "image_url",
-            "image_url": {
-                "url": f"data:image/webp;base64,{image_base64}" if image_base64 else image_url
-            }
-        }
+        print(image_url)
         messages.append({
             "role": "user",
-            "content": [
-                {"type": "text", "text": f"Based on these forum excerpts:\n\n{context}\n\nQuestion: {query}"},
-                image_payload
-            ]
+            "content": f"Based on these forum excerpts:\n\n{context}\n\nImage: {image_url}\n\nQuestion: {query}"
         })
     else:
         messages.append({
@@ -107,7 +99,7 @@ def generate_answer(query: str, context_texts: List[str], image_url: str = None,
     return ai_pipe_chat_completion(messages)
 
 
-def output(query,imageurl=None,k=3):
+def output(query,image_url=None,k=3):
     results = semantic_search(query, top_k=k)
     # if not results or (results[0].get("score", 0) < 0.4):
     #     return {"answer": "Sorry, the answer is not available in the discourse.", "links": []}
@@ -117,7 +109,7 @@ def output(query,imageurl=None,k=3):
     #     print(f"Link: {res['link']}")
     #     print(f"Content snippet: {res['combined_text'][:500]}...\n")
     context_texts = [res["combined_text"] for res in results]
-    answer = generate_answer(query, context_texts,image_url=imageurl)
+    answer = generate_answer(query, context_texts,image_url=image_url)
     return {'answer':answer,'links':[{"url":res['link'],'text':res['combined_text'][:100]} for res in results]}
 
 if __name__=='__main__':
