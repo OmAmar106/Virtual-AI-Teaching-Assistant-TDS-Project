@@ -5,28 +5,33 @@ import requests
 from pinecone import Pinecone, ServerlessSpec
 import base64
 
-AI_PIPE_API_KEY = os.getenv("API_KEY")
-PINECONE_API_KEY = os.getenv("PINE_KEY")
+try:
+    AI_PIPE_API_KEY = os.getenv("API_KEY")
+    PINECONE_API_KEY = os.getenv("PINE_KEY")
+    pinecone = Pinecone(api_key=PINECONE_API_KEY)
 
+    index_name = "discourse-embeddings"
+    if index_name not in pinecone.list_indexes().names():
+        pinecone.create_index(
+            name=index_name,
+            dimension=1536,
+            metric="cosine",
+            spec=ServerlessSpec(cloud="aws", region="us-east-1")
+        )
+
+    index = pinecone.Index(index_name)
+
+    HEADERS = {
+        "Authorization": f"{AI_PIPE_API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+except:
+    print("API Key not in environment")
+    
 AI_PIPE_BASE_URL = "https://aiproxy.sanand.workers.dev/openai/v1"
 
-pinecone = Pinecone(api_key=PINECONE_API_KEY)
 
-index_name = "discourse-embeddings"
-if index_name not in pinecone.list_indexes().names():
-    pinecone.create_index(
-        name=index_name,
-        dimension=1536,
-        metric="cosine",
-        spec=ServerlessSpec(cloud="aws", region="us-east-1")
-    )
-
-index = pinecone.Index(index_name)
-
-HEADERS = {
-    "Authorization": f"{AI_PIPE_API_KEY}",
-    "Content-Type": "application/json",
-}
 
 def ai_pipe_embedding(text: str) -> List[float]:
     url = f"{AI_PIPE_BASE_URL}/embeddings"
@@ -52,6 +57,8 @@ def semantic_search(query: str, top_k: int = 5) -> List[Dict[str, Any]]:
     )
     results = []
     for match in search_response.matches:
+        if match.score<0.5:
+            continue
         try:
             results.append({
                 "combined_text": match.metadata["combined_text"],

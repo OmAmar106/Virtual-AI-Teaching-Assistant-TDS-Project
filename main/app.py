@@ -1,16 +1,16 @@
-from flask import Flask, request, url_for, jsonify, send_from_directory
+from flask import Flask, request, url_for, jsonify, send_from_directory,render_template
 from flask_cors import CORS
 import os
 import base64
 import random
 
 if 'VERCEL' in os.environ:
-    import main.generate
+    import main.generate as generate
 else:
     import generate
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 if 'VERCEL' in os.environ:
     UPLOAD_FOLDER = '/tmp/uploads'
 else:
@@ -40,14 +40,22 @@ def index():
             image_url = url_for('uploaded_file', filename=filename, _external=True)
     except:
         image_url = None
-    d = jsonify(main.generate.output(question, image_url))
-    
+    try:
+        d = jsonify(generate.output(question, image_url))
+        num = 200
+    except:
+        d = {}
+        num = 404
     try:
         if filepath and os.path.exists(filepath):
             os.remove(filepath)
     except Exception as e:
         print(f"Error deleting image file: {e}")
-    return d
+    return d,num
+
+@app.route('/',methods=['GET'])
+def start():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
