@@ -23,6 +23,17 @@ A Virtual AI Teaching Assistant built with an embedding-based retrieval architec
 
 ---
 
+## Technology
+- Python
+- Flask
+- Pinecone
+- BeautifulSoup
+- HTML
+- CSS
+- JS
+
+---
+
 ## 🚀 Installation
 
 ```bash
